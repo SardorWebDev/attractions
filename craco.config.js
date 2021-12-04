@@ -1,12 +1,12 @@
-// tailwind.config.js
+
+// craco.config.js
 module.exports = {
-    purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
-    darkMode: false, // or 'media' or 'class'
-    theme: {
-        extend: {},
+    style: {
+        postcss: {
+            plugins: [
+                require('tailwindcss'),
+                require('autoprefixer'),
+            ],
+        },
     },
-    variants: {
-        extend: {},
-    },
-    plugins: [],
 }

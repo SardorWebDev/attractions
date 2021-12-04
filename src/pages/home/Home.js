@@ -1,4 +1,5 @@
 import useHomeService from "./home.service";
+import MainLayout from "../../layouts/MainLayout";
 
 const Home = ()=>{
 
@@ -6,25 +7,38 @@ const Home = ()=>{
     const {state, name, setName, getGeoInfo, features,  selectedAttraction, setSelectedAttraction, getAttractionInfo} = useHomeService()
 
 
-    return <div>
-        <input className={"p-2 text-lg focus:outline-none"} value={name} onChange={e=>setName(e.target.value)} type="text"/>
-        <button onClick={getGeoInfo} className={"p-3 bg-green-500"} >Search</button>
-        <hr/>
-        <div>
+    return <MainLayout>
+        <div className={"container mx-auto"}>
+
+            <div className={"mt-40 w-1/2 mx-auto border rounded overflow-hidden p-1"}>
+                <input className={"p-2 text-lg focus:outline-none rounded w-4/5 text-gray-500"}
+                       value={name}
+                       placeholder={"Shaxar nomini kiriting..."}
+                       onChange={e=>setName(e.target.value)}
+                       type="text"
+                />
+                <button onClick={getGeoInfo}
+                        className={"p-3 bg-green-400 w-1/5 rounded text-white font-bold hover:bg-green-500"}
+                >Topaylik</button>
+            </div>
+
+
+
+
             {
-                state&& <ul>
-                    <li>Name: {state?.name}</li>
-                    <li>Country: {state?.country}</li>
-                    <li>Population: {state?.population}</li>
-                    <li>Time zone: {state?.timezone}</li>
-                    <li>Latitude: {state?.lat}</li>
-                    <li>Longitude: {state?.lon}</li>
+                state&& <ul className={"flex flex-wrap mt-10" }>
+                    <li className={"border rounded p-1 bg-blue-300 m-1"}>Nomi: {state?.name}</li>
+                    <li className={"border rounded p-1 bg-blue-300 m-1"}>Davlat: {state?.country}</li>
+                    <li className={"border rounded p-1 bg-blue-300 m-1"}>Aholisi: {state?.population}</li>
+                    <li className={"border rounded p-1 bg-blue-300 m-1"}>Vaqt: {new Date().toLocaleString("ru-Ru",{timeZone: state?.timezone})}</li>
+                    {/*<li className={"border rounded p-1 bg-blue-300 m-1"}>Latitude: {state?.lat}</li>*/}
+                    {/*<li className={"border rounded p-1 bg-blue-300 m-1"}>Longitude: {state?.lon}</li>*/}
                 </ul>
             }
 
-        </div>
 
-        <hr/>
+
+
 
         <div>
             <ul>
@@ -35,6 +49,7 @@ const Home = ()=>{
 
         {selectedAttraction&&JSON.stringify(selectedAttraction)}
     </div>
+    </MainLayout>
 }
 
 export default Home

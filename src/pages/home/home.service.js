@@ -1,5 +1,6 @@
 import {useCallback, useEffect, useState} from "react";
 import api from '../../helpers/api'
+import axios from "axios";
 
 
 const useHomeService = () => {
@@ -12,6 +13,42 @@ const useHomeService = () => {
     const [limit, setLimit] = useState(5)
 
     const [features, setFeatures] = useState([])
+
+    useEffect(()=>{
+
+
+        // const options = {
+        //     method: 'POST',
+        //     url: 'https://google-translate1.p.rapidapi.com/language/translate/v2',
+        //     headers: {
+        //         'content-type': 'application/x-www-form-urlencoded',
+        //         'accept-encoding': 'application/gzip',
+        //         'x-rapidapi-host': 'google-translate1.p.rapidapi.com',
+        //         'x-rapidapi-key': '3a6c41a26amsh7e82b3642544ee0p1f7460jsn5189d276bf0a'
+        //     },
+        //     data: {q: 'Hello, world!', target: 'es', source: 'en'}
+        // };
+        //
+        axios.get("  https://translate.yandex.net/api/v1.5/tr.json/translate?key=AQAAAAA2S91sAATuwcyiRXanvk3oiVXgGD8XXog&text=Hello&lang=ru&format=plain"
+            ).then(function (response) {
+            console.log(response.data);
+        }).catch(function (error) {
+            console.error(error);
+        });
+
+
+
+    },[])
+
+
+
+
+
+
+
+
+
+
 
     const getGeoInfo = useCallback(async () => {
         if (name.length>=3) {
