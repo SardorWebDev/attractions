@@ -2,16 +2,20 @@ import React from 'react';
 
 const Navbar = () => {
     return (
-        <nav className={"bg-blue-100"}>
-            <div className="container mx-auto py-4">
+        <nav className={"sticky top-0 text-white font-bold bg-transparent"}>
+                <marquee>
+                    {/*<ul className={"flex justify-around"}>*/}
+                        <span  className={"cursor-pointer mx-4 hover:text-blue-500 select-none"}>O'zbekistonliklar qayerlarda dam olmoqda?</span>
 
-                <ul className={"flex justify-around"}>
-                    <li>O'zbekistonliklar qayerlarda dam olmoqda?</li>
+                        <span  className={"cursor-pointer mx-4 hover:text-blue-500 select-none"}>Yurtimizga qaysi davlatlardan turistlar kelmoqda?</span>
 
-                    <li>Yurtimizga qaysi davlatlardan turistlar kelmoqda?</li>
+                        <span className={"cursor-pointer mx-4 hover:text-blue-500 select-none"}>O'zbekistonliklar qaysi davlatlarga vizasiz sayohat qilsa bo'ladi?</span>
 
-                </ul>
-            </div>
+                        <span className={"cursor-pointer mx-4 hover:text-blue-500 select-none"}>Eng mashxur turistik shaxarlar?</span>
+                        <span className={"cursor-pointer mx-4 hover:text-blue-500 select-none"}><a href="#famous-places">Eng mashxur joylar?</a> </span>
+
+                    {/*</ul>*/}
+                </marquee>
         </nav>
     );
 };

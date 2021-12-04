@@ -4,9 +4,13 @@ import Header from "../components/Header";
 const MainLayout = ({children}) => {
     return (
         <>
-            <Header/>
+            {/*<Header/>*/}
 
-            {children}
+            <main>
+                {children}
+            </main>
+
+
         </>
     );
 };
