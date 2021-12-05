@@ -13,6 +13,7 @@ const Navbar = () => {
 
                         <span className={"cursor-pointer mx-4 hover:text-blue-500 select-none"}>Eng mashxur turistik shaxarlar?</span>
                         <span className={"cursor-pointer mx-4 hover:text-blue-500 select-none"}><a href="#famous-places">Eng mashxur joylar?</a> </span>
+                        <span className={"cursor-pointer mx-4 hover:text-blue-500 select-none"}><a href="#operator">Litsenziyaga ega tur operatorlar</a> </span>
 
                     {/*</ul>*/}
                 </marquee>
